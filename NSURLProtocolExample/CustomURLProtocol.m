@@ -7,8 +7,8 @@
 //
 
 #import "CustomURLProtocol.h"
+#import "WBDNSCache.h"
 #import "DPDPlus.h"
-
 
 static NSString * const URLProtocolHandledKey = @"URLProtocolHandledKey";
 
@@ -103,11 +103,19 @@ static NSMutableArray * trustedCerts;
     if ([self isJumeiWithHost:originHostString]) {
         
         if (![self isPicResWithURL:originUrlString]) {
-            DPDPRecord * record =[DPDPlus ipAddressesForDomain:originHostString];
-            if (!record || record.isTimeOut) {
-                [DPDPlus registerDomains:@[originHostString]];
+//            DPDPRecord * record =[DPDPlus ipAddressesForDomain:originHostString];
+//            if (!record || record.isTimeOut) {
+//                [DPDPlus registerDomains:@[originHostString]];
+//            }
+//            [DPDPlus applyHTTPDNSForRequest:mutableReqeust];
+            
+            NSArray * array =  [[WBDNSCache sharedInstance] getDomainServerIpFromURL:originUrlString];
+            
+            if (array.count>0) {
+                WBDNSDomainInfo * domainInfo = [array firstObject];
+                mutableReqeust.URL = [NSURL URLWithString:domainInfo.url];
+                [mutableReqeust setValue:domainInfo.host forHTTPHeaderField:@"Host"];
             }
-            [DPDPlus applyHTTPDNSForRequest:mutableReqeust];
             
             originUrlString = [mutableReqeust.URL absoluteString];
             originHostString = [mutableReqeust.URL host];

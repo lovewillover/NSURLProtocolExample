@@ -20,11 +20,43 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - HTTPDNSLib-for-iOS (0.0.1):
+    - HTTPDNSLib-for-iOS/CacheManager (= 0.0.1)
+    - HTTPDNSLib-for-iOS/ConfigManager (= 0.0.1)
+    - HTTPDNSLib-for-iOS/HttpDnsManager (= 0.0.1)
+    - HTTPDNSLib-for-iOS/LogManager (= 0.0.1)
+    - HTTPDNSLib-for-iOS/Models (= 0.0.1)
+    - HTTPDNSLib-for-iOS/NetworkManager (= 0.0.1)
+    - HTTPDNSLib-for-iOS/QueryManager (= 0.0.1)
+    - HTTPDNSLib-for-iOS/SortManager (= 0.0.1)
+    - HTTPDNSLib-for-iOS/SpeedTestManager (= 0.0.1)
+    - HTTPDNSLib-for-iOS/Tools (= 0.0.1)
+  - HTTPDNSLib-for-iOS/CacheManager (0.0.1)
+  - HTTPDNSLib-for-iOS/ConfigManager (0.0.1)
+  - HTTPDNSLib-for-iOS/HttpDnsManager (0.0.1)
+  - HTTPDNSLib-for-iOS/LogManager (0.0.1)
+  - HTTPDNSLib-for-iOS/Models (0.0.1)
+  - HTTPDNSLib-for-iOS/NetworkManager (0.0.1)
+  - HTTPDNSLib-for-iOS/QueryManager (0.0.1)
+  - HTTPDNSLib-for-iOS/SortManager (0.0.1)
+  - HTTPDNSLib-for-iOS/SpeedTestManager (0.0.1)
+  - HTTPDNSLib-for-iOS/Tools (0.0.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
+  - HTTPDNSLib-for-iOS (from `https://github.com/lovewillover/HTTPDNSLib-for-iOS.git`)
+
+EXTERNAL SOURCES:
+  HTTPDNSLib-for-iOS:
+    :git: https://github.com/lovewillover/HTTPDNSLib-for-iOS.git
+
+CHECKOUT OPTIONS:
+  HTTPDNSLib-for-iOS:
+    :commit: 16a0981fed281ee6c2e7a20cf819d2bae6044ac2
+    :git: https://github.com/lovewillover/HTTPDNSLib-for-iOS.git
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  HTTPDNSLib-for-iOS: 161fd4f01be0c4ec0abdc735c3ec7f046f9c0e20
 
 COCOAPODS: 0.37.2

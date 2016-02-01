@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "CustomURLProtocol.h"
-
+#import "WBDNSCache.h"
+#import "DPDPlus.h"
 @interface AppDelegate ()
 
 @end
@@ -21,6 +22,13 @@
     
     //注册protocol
     [NSURLProtocol registerClass:[CustomURLProtocol class]];
+    
+    [WBDNSCache setDPlusID:@"128" DPlusKey:@"sQW9<Fzq"];
+    
+    [[WBDNSCache sharedInstance]preloadDomains:@[@"mobi.jumei.com",@"h5.jumei.com"]];
+    
+//     [DPDPlus registerDomains:@[@"mobi.jumei.com",@"baidu.com",@"sina.com",@"h5.jumei.com"]];
+
     return YES;
 }
 

@@ -7,9 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "WBDNSCache.h"
+
 #import <AFNetworking/AFNetworking.h>
-#import "DPDPlus.h"
-#import "JMWebViewHTTPSValidation.h"
 @interface ViewController ()<UITextFieldDelegate,NSURLConnectionDataDelegate,NSURLConnectionDelegate,UIWebViewDelegate>
 {
 
@@ -28,7 +28,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [DPDPlus registerDomains:@[@"mobi.jumei.com",@"baidu.com",@"sina.com",@"h5.jumei.com"]];
+   
+    
 
     self.webView.delegate = self;
     
@@ -36,19 +37,19 @@
 }
 
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
-
- navigationType:(UIWebViewNavigationType)navigationType{
-
-    
-  BOOL isContinue =  [[JMWebViewHTTPSValidation sharedInstance]HTTPSValidationWithRequest:request andWebView:webView];
-    
-    if (!isContinue) {
-        return NO;
-    }
-    return YES;
-    
-}
+//- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
+//
+// navigationType:(UIWebViewNavigationType)navigationType{
+//
+//    
+//  BOOL isContinue =  [[JMWebViewHTTPSValidation sharedInstance]HTTPSValidationWithRequest:request andWebView:webView];
+//    
+//    if (!isContinue) {
+//        return NO;
+//    }
+//    return YES;
+//    
+//}
 
 
 
@@ -65,11 +66,11 @@
     UIButton * button = sender;
     if (button.selected) {
         button.selected = NO;
-        self.urlTextField.text = @"https://www.google.hk";
+        self.urlTextField.text = @"http://dwz.cn/2CH5OH";
     }
     else{
         button.selected = YES;
-        self.urlTextField.text = @"https://h5.jumei.com/activity/signin/index";
+        self.urlTextField.text = @"http://h5.jumei.com/activity/signin/login";
     }
     
     [self sendRequest];
