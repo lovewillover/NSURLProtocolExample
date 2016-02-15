@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "WBDNSCache.h"
-
+#import "RCTRootView.h"
 #import <AFNetworking/AFNetworking.h>
 @interface ViewController ()<UITextFieldDelegate,NSURLConnectionDataDelegate,NSURLConnectionDelegate,UIWebViewDelegate>
 {
@@ -29,7 +29,13 @@
     // Do any additional setup after loading the view, typically from a nib.
     
    
-    
+    NSString *urlString = @"http://localhost:8081/index.ios.bundle";
+    NSURL *jsCodeLocation = [NSURL URLWithString:urlString];
+    RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
+                                                        moduleName: @"SimpleApp" initialProperties:nil
+                                                     launchOptions:nil];
+    [self.view addSubview:rootView];
+    rootView.frame = self.view.bounds;
 
     self.webView.delegate = self;
     
