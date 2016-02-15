@@ -41,14 +41,43 @@ PODS:
   - HTTPDNSLib-for-iOS/SortManager (0.0.1)
   - HTTPDNSLib-for-iOS/SpeedTestManager (0.0.1)
   - HTTPDNSLib-for-iOS/Tools (0.0.1)
+  - React/Core (0.19.0)
+  - React/RCTActionSheet (0.19.0):
+    - React/Core
+  - React/RCTGeolocation (0.19.0):
+    - React/Core
+  - React/RCTImage (0.19.0):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTNetwork (0.19.0):
+    - React/Core
+  - React/RCTSettings (0.19.0):
+    - React/Core
+  - React/RCTText (0.19.0):
+    - React/Core
+  - React/RCTVibration (0.19.0):
+    - React/Core
+  - React/RCTWebSocket (0.19.0):
+    - React/Core
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
   - HTTPDNSLib-for-iOS (from `https://github.com/lovewillover/HTTPDNSLib-for-iOS.git`)
+  - React/Core (from `./NSURLProtocolExample/node_modules/react-native`)
+  - React/RCTActionSheet (from `./NSURLProtocolExample/node_modules/react-native`)
+  - React/RCTGeolocation (from `./NSURLProtocolExample/node_modules/react-native`)
+  - React/RCTImage (from `./NSURLProtocolExample/node_modules/react-native`)
+  - React/RCTNetwork (from `./NSURLProtocolExample/node_modules/react-native`)
+  - React/RCTSettings (from `./NSURLProtocolExample/node_modules/react-native`)
+  - React/RCTText (from `./NSURLProtocolExample/node_modules/react-native`)
+  - React/RCTVibration (from `./NSURLProtocolExample/node_modules/react-native`)
+  - React/RCTWebSocket (from `./NSURLProtocolExample/node_modules/react-native`)
 
 EXTERNAL SOURCES:
   HTTPDNSLib-for-iOS:
     :git: https://github.com/lovewillover/HTTPDNSLib-for-iOS.git
+  React:
+    :path: ./NSURLProtocolExample/node_modules/react-native
 
 CHECKOUT OPTIONS:
   HTTPDNSLib-for-iOS:
@@ -58,5 +87,6 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   HTTPDNSLib-for-iOS: 161fd4f01be0c4ec0abdc735c3ec7f046f9c0e20
+  React: da5809d4450967da3e404030d84694a030e27ecb
 
 COCOAPODS: 0.37.2
